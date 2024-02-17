@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <h2>To Do List</h2>
+    <input type="text" placeholder="Enter a task..." id="input" />
+    <button id="addListItem" onclick="addListItem()">Add</button>
+
+    <ul id="list">
+      <li>Pay bills</li>
+      <li>Read a book</li>
+      <li>Meet Anna</li>
+      <li>Wash dishes</li>
+    </ul>
+
+    <script>
+      function addListItem() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("input").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === "") {
+          alert("You must write something!");
+        } else {
+          document.getElementById("list").appendChild(li);
+        }
+        document.getElementById("input").value = "";
+      }
+    </script>
+  </body>
+</html>
